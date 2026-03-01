@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -14,11 +17,17 @@ body {
 
 .navbar {
     padding: 20px 0;
-    background-color: #1e293b;
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
 }
 
 .hero {
-    padding: 120px 0 80px 0;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero h1 {
@@ -39,6 +48,16 @@ section {
 h2 {
     margin-bottom: 20px;
     font-size: 2rem;
+    position: relative;
+    display: inline-block
+}
+h2::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: #38bdf8;
+    margin: 8px auto 0;
 }
 
 .about p {
@@ -51,6 +70,7 @@ h2 {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .skill-list span {
@@ -74,8 +94,14 @@ h2 {
     border-radius: 8px;
     font-weight: 600;
     transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background-color: #0ea5e9;
+    transform: translateY(-3px);
+}
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid #1e293b;
 }
